@@ -38,51 +38,63 @@ The dataset used in this project is the **Titanic dataset**, which is publicly a
 ## Methodology
 
 ### 1. Exploratory Data Analysis (EDA)
-- **Missing Values**: Visualized using the `missmap` function from the `Amelia` package. Age had missing values, which were imputed based on passenger class.
-- **Survival Count**: Visualized the distribution of survival using a bar plot. The majority of passengers did not survive.
-- **Passenger Classes**: Visualized the distribution of passenger classes. Most passengers were in the third class.
-- **Age Distribution**: Visualized the age distribution using a histogram. Most passengers were between 20 and 40 years old.
-- **Gender Distribution**: Visualized the gender distribution. There were more male passengers than female passengers.
+- **Missing Values**: Visualized using the `missmap` function from the `Amelia` package. Age had missing values, which were imputed based on passenger class. [Link to visualization](#)
+- **Survival Count**: Visualized the distribution of survival using a bar plot. The majority of passengers did not survive. [Link to visualization](#)
+- **Passenger Classes**: Visualized the distribution of passenger classes. Most passengers were in the third class. [Link to visualization](#)
+- **Age Distribution**: Visualized the age distribution using a histogram. Most passengers were between 20 and 40 years old. [Link to visualization](#)
+- **Gender Distribution**: Visualized the gender distribution. There were more male passengers than female passengers. [Link to visualization](#)
 
 ### 2. Data Preprocessing
-- **Handling Missing Values**: Missing age values were imputed based on the median age of each passenger class. Missing titles were inferred based on gender and age.
-- **Feature Engineering**: Created a `FamilySize` feature by combining `SibSp` and `Parch`. Extracted titles (e.g., Mr, Mrs, Miss) from passenger names.
-- **Encoding Categorical Variables**: Converted categorical variables like `Pclass`, `Sex`, and `Embarked` into factors.
+- **Handling Missing Values**: Missing age values were imputed based on the median age of each passenger class. Missing titles were inferred based on gender and age. [Link to table](#)
+- **Feature Engineering**: Created a `FamilySize` feature by combining `SibSp` and `Parch`. Extracted titles (e.g., Mr, Mrs, Miss) from passenger names. [Link to table](#)
+- **Encoding Categorical Variables**: Converted categorical variables like `Pclass`, `Sex`, and `Embarked` into factors. [Link to processed dataset](#)
 
 ### 3. Model Building
-- **LASSO Logistic Regression**: Used LASSO regularization to perform feature selection and prevent overfitting. The optimal lambda value was determined using cross-validation.
-- **Cross-Validation**: Performed 10-fold cross-validation to evaluate the model's performance.
-- **Feature Importance**: Visualized the importance of features using a bar plot.
+- **LASSO Logistic Regression**: Used LASSO regularization to perform feature selection and prevent overfitting. The optimal lambda value was determined using cross-validation. [Link to feature importance plot](#)
+- **Cross-Validation**: Performed 10-fold cross-validation to evaluate the model's performance. [Link to results](#)
+- **Feature Importance**: Visualized the importance of features using a bar plot. [Link to visualization](#)
 
 ### 4. Model Evaluation
-- **Confusion Matrix**: Evaluated the model's performance using a confusion matrix.
-- **ROC Curve**: Plotted the ROC curve and calculated the AUC (Area Under the Curve) to assess the model's predictive power.
-- **Optimized Threshold**: Used Youden's Index to determine the best threshold for classification, improving model performance.
+- **Confusion Matrix**: Evaluated the model's performance using a confusion matrix. [Link to heatmap](#)
+- **ROC Curve**: Plotted the ROC curve and calculated the AUC (Area Under the Curve) to assess the model's predictive power. [Link to ROC curve](#)
+- **Optimized Threshold**: Used Youden's Index to determine the best threshold for classification, improving model performance. [Link to threshold analysis](#)
 
 ---
 
 ## Results
 
 ### Key Insights
-1. **Socioeconomic Status and Survival**: First-class passengers had a higher survival rate compared to second and third-class passengers.
-2. **Gender Disparity**: Female passengers had a significantly higher survival rate than male passengers.
-3. **Age and Survival**: Children and older passengers had higher survival rates compared to young adults.
-4. **Family Size and Survival**: Passengers with smaller family sizes had a higher chance of survival.
-5. **Fare and Survival**: Passengers who paid higher fares had a higher survival rate.
+1. **Socioeconomic Status and Survival**: First-class passengers had a higher survival rate compared to second and third-class passengers. [Link to visualization](#)
+2. **Gender Disparity**: Female passengers had a significantly higher survival rate than male passengers. [Link to visualization](#)
+3. **Age and Survival**: Children and older passengers had higher survival rates compared to young adults. [Link to visualization](#)
+4. **Family Size and Survival**: Passengers with smaller family sizes had a higher chance of survival. [Link to visualization](#)
+5. **Fare and Survival**: Passengers who paid higher fares had a higher survival rate. [Link to visualization](#)
 
 ### Model Performance
-- **Cross-Validation Accuracy**: The model achieved an accuracy of approximately 80% on the training data.
-- **Optimized Threshold**: Using Youden's Index, the model's accuracy improved to 82%, with a precision of 78% and recall of 75%.
-- **AUC**: The AUC value was 0.86, indicating strong predictive power.
+- **Cross-Validation Accuracy**: The model achieved an accuracy of approximately 80% on the training data. [Link to metrics](#)
+- **Optimized Threshold**: Using Youden's Index, the model's accuracy improved to 82%, with a precision of 88% and recall of 82%. [Link to evaluation metrics](#)
+- **AUC**: The AUC value was 0.86, indicating strong predictive power. [Link to ROC curve](#)
+
+### Performance Comparison Table
+Below is a table comparing model performance metrics before and after threshold optimization:
+
+| Metric       | Original Model | Optimized Threshold |
+|--------------|----------------|---------------------|
+| Accuracy     | 80.9%          | 82.6%               |
+| Precision    | 82.8%          | 88.3%               |
+| Recall       | 87.3%          | 82.7%               |
+| F1-Score     | 85.0%          | 85.4%               |
+
+---
 
 ### Visualizations
-- **Survival Count**: Bar plot showing the distribution of survival.
-- **Passenger Classes**: Bar plot showing the distribution of passenger classes.
-- **Age Distribution**: Histogram showing the distribution of ages.
-- **Gender Distribution**: Bar plot showing the distribution of genders.
-- **Feature Importance**: Bar plot showing the importance of features selected by LASSO.
-- **ROC Curve**: Plot showing the ROC curve and AUC value.
-- **Confusion Matrix**: Heatmap showing the confusion matrix for the optimized model.
+- **Survival Count**: Bar plot showing the distribution of survival. [Link to visualization](#)
+- **Passenger Classes**: Bar plot showing the distribution of passenger classes. [Link to visualization](#)
+- **Age Distribution**: Histogram showing the distribution of ages. [Link to visualization](#)
+- **Gender Distribution**: Bar plot showing the distribution of genders. [Link to visualization](#)
+- **Feature Importance**: Bar plot showing the importance of features selected by LASSO. [Link to visualization](#)
+- **ROC Curve**: Plot showing the ROC curve and AUC value. [Link to visualization](#)
+- **Confusion Matrix**: Heatmap showing the confusion matrix for the optimized model. [Link to visualization](#)
 
 ---
 
@@ -103,14 +115,14 @@ install.packages(c("data.table", "Amelia", "ggplot2", "dplyr", "glmnet", "caret"
 ---
 
 ## Conclusion
-This project demonstrates the use of logistic regression with LASSO regularization to predict survival on the Titanic. By performing thorough EDA, preprocessing, and model evaluation, we achieved a robust model with strong predictive power. The insights derived from the data provide valuable information about the factors influencing survival.
+This project demonstrates the use of logistic regression with LASSO regularization to predict survival on the Titanic. By performing thorough EDA, preprocessing, and model evaluation, we achieved a robust model with strong predictive power. The insights derived from the data provide valuable information about the factors influencing survival. [Link to final summary](#)
 
 ---
 
 ## Future Work
-- Experiment with other machine learning algorithms (e.g., Random Forest, Gradient Boosting).
-- Perform hyperparameter tuning to further improve model performance.
-- Explore additional feature engineering techniques to enhance predictive power.
+- Experiment with other machine learning algorithms (e.g., Random Forest, Gradient Boosting). [Link to additional experiments](#)
+- Perform hyperparameter tuning to further improve model performance. [Link to tuning experiments](#)
+- Explore additional feature engineering techniques to enhance predictive power. [Link to advanced features](#)
 
 ---
 
