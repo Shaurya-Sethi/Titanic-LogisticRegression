@@ -38,42 +38,42 @@ The dataset used in this project is the **Titanic dataset**, which is publicly a
 ## Methodology
 
 ### 1. Exploratory Data Analysis (EDA)
-- **Missing Values**: Visualized using the `missmap` function from the `Amelia` package. Age had missing values, which were imputed based on passenger class. [Link to visualization](#)
-- **Survival Count**: Visualized the distribution of survival using a bar plot. The majority of passengers did not survive. [Link to visualization](#)
-- **Passenger Classes**: Visualized the distribution of passenger classes. Most passengers were in the third class. [Link to visualization](#)
-- **Age Distribution**: Visualized the age distribution using a histogram. Most passengers were between 20 and 40 years old. [Link to visualization](#)
-- **Gender Distribution**: Visualized the gender distribution. There were more male passengers than female passengers. [Link to visualization](#)
+- **Missing Values**: Visualized using the `missmap` function from the `Amelia` package. Age had missing values, which were imputed based on passenger class. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/MissMap.png](#)
+- **Survival Count**: Visualized the distribution of survival using a bar plot. The majority of passengers did not survive. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvivalCount.png](#)
+- **Passenger Classes**: Visualized the distribution of passenger classes. Most passengers were in the third class. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/PClasses.png](#)
+- **Age Distribution**: Visualized the age distribution using a histogram. Most passengers were between 20 and 40 years old. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/AgeDist.png](#)
+- **Gender Distribution**: Visualized the gender distribution. There were more male passengers than female passengers. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/GenderDist.png](#)
 
 ### 2. Data Preprocessing
-- **Handling Missing Values**: Missing age values were imputed based on the median age of each passenger class. Missing titles were inferred based on gender and age. [Link to table](#)
-- **Feature Engineering**: Created a `FamilySize` feature by combining `SibSp` and `Parch`. Extracted titles (e.g., Mr, Mrs, Miss) from passenger names. [Link to table](#)
-- **Encoding Categorical Variables**: Converted categorical variables like `Pclass`, `Sex`, and `Embarked` into factors. [Link to processed dataset](#)
+- **Handling Missing Values**: Missing age values were imputed based on the median age of each passenger class. Missing titles were inferred based on gender and age. 
+- **Feature Engineering**: Created a `FamilySize` feature by combining `SibSp` and `Parch`. Extracted titles (e.g., Mr, Mrs, Miss) from passenger names. 
+- **Encoding Categorical Variables**: Converted categorical variables like `Pclass`, `Sex`, and `Embarked` into factors. 
 
 ### 3. Model Building
-- **LASSO Logistic Regression**: Used LASSO regularization to perform feature selection and prevent overfitting. The optimal lambda value was determined using cross-validation. [Link to feature importance plot](#)
-- **Cross-Validation**: Performed 10-fold cross-validation to evaluate the model's performance. [Link to results](#)
-- **Feature Importance**: Visualized the importance of features using a bar plot. [Link to visualization](#)
+- **LASSO Logistic Regression**: Used LASSO regularization to perform feature selection and prevent overfitting. The optimal lambda value was determined using cross-validation. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/FeatureImportancePlot.png](#)
+- **Cross-Validation**: Performed 10-fold cross-validation to evaluate the model's performance. 
+- **Feature Importance**: Visualized the importance of features using a bar plot. 
 
 ### 4. Model Evaluation
-- **Confusion Matrix**: Evaluated the model's performance using a confusion matrix. [Link to heatmap](#)
-- **ROC Curve**: Plotted the ROC curve and calculated the AUC (Area Under the Curve) to assess the model's predictive power. [Link to ROC curve](#)
-- **Optimized Threshold**: Used Youden's Index to determine the best threshold for classification, improving model performance. [Link to threshold analysis](#)
+- **Confusion Matrix**: Evaluated the model's performance using a confusion matrix. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/ConfMatrix.png](#)
+- **ROC Curve**: Plotted the ROC curve and calculated the AUC (Area Under the Curve) to assess the model's predictive power. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/ROC.png](#)
+- **Optimized Threshold**: Used Youden's Index to determine the best threshold for classification, improving model performance.
 
 ---
 
 ## Results
 
 ### Key Insights
-1. **Socioeconomic Status and Survival**: First-class passengers had a higher survival rate compared to second and third-class passengers. [Link to visualization](#)
-2. **Gender Disparity**: Female passengers had a significantly higher survival rate than male passengers. [Link to visualization](#)
-3. **Age and Survival**: Children and older passengers had higher survival rates compared to young adults. [Link to visualization](#)
-4. **Family Size and Survival**: Passengers with smaller family sizes had a higher chance of survival. [Link to visualization](#)
-5. **Fare and Survival**: Passengers who paid higher fares had a higher survival rate. [Link to visualization](#)
+1. **Socioeconomic Status and Survival**: First-class passengers had a higher survival rate compared to second and third-class passengers. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvByPClass.png](#)
+2. **Gender Disparity**: Female passengers had a significantly higher survival rate than male passengers. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvByGender.png](#)
+3. **Age and Survival**: Children and older passengers had higher survival rates compared to young adults. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/AgeVsSurv.png](#)
+4. **Family Size and Survival**: Passengers with smaller family sizes had a higher chance of survival. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvPropFamily.png](#)
+5. **Fare and Survival**: Passengers who paid higher fares had a higher survival rate. 
 
 ### Model Performance
-- **Cross-Validation Accuracy**: The model achieved an accuracy of approximately 80% on the training data. [Link to metrics](#)
-- **Optimized Threshold**: Using Youden's Index, the model's accuracy improved to 82%, with a precision of 88% and recall of 82%. [Link to evaluation metrics](#)
-- **AUC**: The AUC value was 0.86, indicating strong predictive power. [Link to ROC curve](#)
+- **Cross-Validation Accuracy**: The model achieved an accuracy of approximately 80% on the training data. 
+- **Optimized Threshold**: Using Youden's Index, the model's accuracy improved to 82%, with a precision of 88% and recall of 82%. 
+- **AUC**: The AUC value was 0.86, indicating strong predictive power. 
 
 ### Performance Comparison Table
 Below is a table comparing model performance metrics before and after threshold optimization:
@@ -88,13 +88,13 @@ Below is a table comparing model performance metrics before and after threshold 
 ---
 
 ### Visualizations
-- **Survival Count**: Bar plot showing the distribution of survival. [Link to visualization](#)
-- **Passenger Classes**: Bar plot showing the distribution of passenger classes. [Link to visualization](#)
-- **Age Distribution**: Histogram showing the distribution of ages. [Link to visualization](#)
-- **Gender Distribution**: Bar plot showing the distribution of genders. [Link to visualization](#)
-- **Feature Importance**: Bar plot showing the importance of features selected by LASSO. [Link to visualization](#)
-- **ROC Curve**: Plot showing the ROC curve and AUC value. [Link to visualization](#)
-- **Confusion Matrix**: Heatmap showing the confusion matrix for the optimized model. [Link to visualization](#)
+- **Survival Count**: Bar plot showing the distribution of survival. 
+- **Passenger Classes**: Bar plot showing the distribution of passenger classes. 
+- **Age Distribution**: Histogram showing the distribution of ages. 
+- **Gender Distribution**: Bar plot showing the distribution of genders. 
+- **Feature Importance**: Bar plot showing the importance of features selected by LASSO. 
+- **ROC Curve**: Plot showing the ROC curve and AUC value. 
+- **Confusion Matrix**: Heatmap showing the confusion matrix for the optimized model. 
 
 ---
 
@@ -115,14 +115,14 @@ install.packages(c("data.table", "Amelia", "ggplot2", "dplyr", "glmnet", "caret"
 ---
 
 ## Conclusion
-This project demonstrates the use of logistic regression with LASSO regularization to predict survival on the Titanic. By performing thorough EDA, preprocessing, and model evaluation, we achieved a robust model with strong predictive power. The insights derived from the data provide valuable information about the factors influencing survival. [Link to final summary](#)
+This project demonstrates the use of logistic regression with LASSO regularization to predict survival on the Titanic. By performing thorough EDA, preprocessing, and model evaluation, we achieved a robust model with strong predictive power. The insights derived from the data provide valuable information about the factors influencing survival.
 
 ---
 
 ## Future Work
-- Experiment with other machine learning algorithms (e.g., Random Forest, Gradient Boosting). [Link to additional experiments](#)
-- Perform hyperparameter tuning to further improve model performance. [Link to tuning experiments](#)
-- Explore additional feature engineering techniques to enhance predictive power. [Link to advanced features](#)
+- Experiment with other machine learning algorithms (e.g., Random Forest, Gradient Boosting). 
+- Perform hyperparameter tuning to further improve model performance. 
+- Explore additional feature engineering techniques to enhance predictive power. 
 
 ---
 
