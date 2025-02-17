@@ -451,7 +451,7 @@ predicted_classes <- ifelse(predictions > 0.5, 1, 0)
 # Since we don't have ground truth labels available for our test test, we can't evaluate using confusion matrix
 # We will thus use cross-validation instead
 
-
+library(caret)
 
 # Define the cross-validation control
 train_control <- trainControl(method = "cv", number = 10)  # 10-fold CV
