@@ -38,11 +38,16 @@ The dataset used in this project is the **Titanic dataset**, which is publicly a
 ## Methodology
 
 ### 1. Exploratory Data Analysis (EDA)
-- **Missing Values**: Visualized using the `missmap` function from the `Amelia` package. Age had missing values, which were imputed based on passenger class. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/MissMap.png](#)
-- **Survival Count**: Visualized the distribution of survival using a bar plot. The majority of passengers did not survive. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvivalCount.png](#)
-- **Passenger Classes**: Visualized the distribution of passenger classes. Most passengers were in the third class. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/PClasses.png](#)
-- **Age Distribution**: Visualized the age distribution using a histogram. Most passengers were between 20 and 40 years old. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/AgeDist.png](#)
-- **Gender Distribution**: Visualized the gender distribution. There were more male passengers than female passengers. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/GenderDist.png](#)
+- **Missing Values**: Visualized using the `missmap` function from the `Amelia` package. Age had missing values, which were imputed based on passenger class.
+<br> ![](MissMap.png)
+- **Survival Count**: Visualized the distribution of survival using a bar plot. The majority of passengers did not survive.
+<br> ![](SurvivalCount.png)
+- **Passenger Classes**: Visualized the distribution of passenger classes. Most passengers were in the third class.
+<br> ![](PClasses.png)
+- **Age Distribution**: Visualized the age distribution using a histogram. Most passengers were between 20 and 40 years old.
+<br> ![](AgeDist.png)
+- **Gender Distribution**: Visualized the gender distribution. There were more male passengers than female passengers.
+<br> ![](GenderDist.png)
 
 ### 2. Data Preprocessing
 - **Handling Missing Values**: Missing age values were imputed based on the median age of each passenger class. Missing titles were inferred based on gender and age. 
@@ -50,13 +55,16 @@ The dataset used in this project is the **Titanic dataset**, which is publicly a
 - **Encoding Categorical Variables**: Converted categorical variables like `Pclass`, `Sex`, and `Embarked` into factors. 
 
 ### 3. Model Building
-- **LASSO Logistic Regression**: Used LASSO regularization to perform feature selection and prevent overfitting. The optimal lambda value was determined using cross-validation. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/FeatureImportancePlot.png](#)
+- **LASSO Logistic Regression**: Used LASSO regularization to perform feature selection and prevent overfitting. The optimal lambda value was determined using cross-validation.
+<br> ![](FeatureImportancePlot.png)
 - **Cross-Validation**: Performed 10-fold cross-validation to evaluate the model's performance. 
 - **Feature Importance**: Visualized the importance of features using a bar plot. 
 
 ### 4. Model Evaluation
-- **Confusion Matrix**: Evaluated the model's performance using a confusion matrix. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/ConfMatrix.png](#)
-- **ROC Curve**: Plotted the ROC curve and calculated the AUC (Area Under the Curve) to assess the model's predictive power. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/ROC.png](#)
+- **Confusion Matrix**: Evaluated the model's performance using a confusion matrix.
+<br> ![](ConfMatrix.png)
+- **ROC Curve**: Plotted the ROC curve and calculated the AUC (Area Under the Curve) to assess the model's predictive power.
+<br> ![](ROC.png)
 - **Optimized Threshold**: Used Youden's Index to determine the best threshold for classification, improving model performance.
 
 ---
@@ -64,10 +72,14 @@ The dataset used in this project is the **Titanic dataset**, which is publicly a
 ## Results
 
 ### Key Insights
-1. **Socioeconomic Status and Survival**: First-class passengers had a higher survival rate compared to second and third-class passengers. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvByPClass.png](#)
-2. **Gender Disparity**: Female passengers had a significantly higher survival rate than male passengers. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvByGender.png](#)
-3. **Age and Survival**: Children and older passengers had higher survival rates compared to young adults. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/AgeVsSurv.png](#)
-4. **Family Size and Survival**: Passengers with smaller family sizes had a higher chance of survival. [https://github.com/Shaurya-Sethi/Titanic-LogisticRegression/blob/main/SurvPropFamily.png](#)
+1. **Socioeconomic Status and Survival**: First-class passengers had a higher survival rate compared to second and third-class passengers.
+<br> ![](SurvByPClass.png)
+2. **Gender Disparity**: Female passengers had a significantly higher survival rate than male passengers.
+<br> ![](SurvByGender.png)
+3. **Age and Survival**: Children and older passengers had higher survival rates compared to young adults.
+<br>  ![](AgeVsSurv.png)
+4. **Family Size and Survival**: Passengers with smaller family sizes had a higher chance of survival.
+<br> ![](SurvPropFamily.png)
 5. **Fare and Survival**: Passengers who paid higher fares had a higher survival rate. 
 
 ### Model Performance
